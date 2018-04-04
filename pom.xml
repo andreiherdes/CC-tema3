@@ -29,6 +29,13 @@
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-web</artifactId>
 		</dependency>
+		
+		<!-- google cloud translate dependency -->
+		<dependency>
+  			<groupId>com.google.cloud</groupId>
+  			<artifactId>google-cloud-translate</artifactId>
+  			<version>1.24.0</version>
+		</dependency>
 
 		<!-- add following dependency under dependencies section -->
 		<dependency>
