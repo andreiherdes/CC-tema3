@@ -29,12 +29,26 @@
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-web</artifactId>
 		</dependency>
-		
+
+		<!-- google speech dependency -->
+		<dependency>
+			<groupId>com.google.cloud</groupId>
+			<artifactId>google-cloud-speech</artifactId>
+			<version>0.42.1-alpha</version>
+		</dependency>
+
+		<!-- google cloud datastore dependency -->
+		<dependency>
+			<groupId>com.google.cloud</groupId>
+			<artifactId>google-cloud-datastore</artifactId>
+			<version>1.22.0</version>
+		</dependency>
+
 		<!-- google cloud translate dependency -->
 		<dependency>
-  			<groupId>com.google.cloud</groupId>
-  			<artifactId>google-cloud-translate</artifactId>
-  			<version>1.24.0</version>
+			<groupId>com.google.cloud</groupId>
+			<artifactId>google-cloud-translate</artifactId>
+			<version>1.24.0</version>
 		</dependency>
 
 		<!-- add following dependency under dependencies section -->
