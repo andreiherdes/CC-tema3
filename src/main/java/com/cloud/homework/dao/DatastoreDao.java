@@ -18,7 +18,7 @@ public class DatastoreDao {
 	private Datastore datastore;
 	private KeyFactory keyFactory;
 
-	private final String kind = "Transactions";
+	private final String kind = "Transaction";
 
 	public DatastoreDao() {
 		datastore = DatastoreOptions.getDefaultInstance().getService(); // Authorized Datastore service
