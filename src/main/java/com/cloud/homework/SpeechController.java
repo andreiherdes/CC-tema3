@@ -1,8 +1,8 @@
 package com.cloud.homework;
 
-import java.nio.file.Files;
-import java.nio.file.Path;
-import java.nio.file.Paths;
+//import java.nio.file.Files;
+//import java.nio.file.Path;
+//import java.nio.file.Paths;
 import java.util.List;
 
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -16,7 +16,7 @@ import com.google.cloud.speech.v1p1beta1.RecognizeResponse;
 import com.google.cloud.speech.v1p1beta1.SpeechClient;
 import com.google.cloud.speech.v1p1beta1.SpeechRecognitionAlternative;
 import com.google.cloud.speech.v1p1beta1.SpeechRecognitionResult;
-import com.google.protobuf.ByteString;
+//import com.google.protobuf.ByteString;
 
 @RestController
 @RequestMapping("/speech")
@@ -31,11 +31,12 @@ public class SpeechController {
 		String respons = "ds";
 		try (SpeechClient speech = SpeechClient.create()) {
 			
-			fileName = "./" + fileName + ".raw";
-			System.out.println(fileName);
-		    Path path = Paths.get(fileName);
-		    byte[] data = Files.readAllBytes(path);
-		    ByteString audioBytes = ByteString.copyFrom(data);
+//			fileName = "./" + fileName + ".raw";
+//			System.out.println(fileName);
+//		    Path path = Paths.get(fileName);
+//		    byte[] data = Files.readAllBytes(path);
+//		    ByteString audioBytes = ByteString.copyFrom(data);
+			String uri = "gs://tema3cloudflexible.appspot.com/"+fileName+".raw";
 
 		    // Configure request with local raw PCM audio
 		    RecognitionConfig config = RecognitionConfig.newBuilder()
@@ -43,9 +44,13 @@ public class SpeechController {
 		        .setLanguageCode("en-US")
 		        .setSampleRateHertz(16000)
 		        .build();
+		    //RecognitionAudio audio = RecognitionAudio.newBuilder()
+		    //    .setContent(audioBytes)
+		    //    .build();
+		    System.out.println(uri);
 		    RecognitionAudio audio = RecognitionAudio.newBuilder()
-		        .setContent(audioBytes)
-		        .build();
+			        .setUri(uri)
+			        .build();
 
 		    // Use blocking call to get audio transcript
 		    RecognizeResponse response = speech.recognize(config, audio);
