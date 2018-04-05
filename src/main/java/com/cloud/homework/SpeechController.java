@@ -36,7 +36,7 @@ public class SpeechController {
 //		    Path path = Paths.get(fileName);
 //		    byte[] data = Files.readAllBytes(path);
 //		    ByteString audioBytes = ByteString.copyFrom(data);
-			String uri = "gs://tema3cloudflexible.appspot.com/"+fileName+".raw";
+			String uri = "gs://cloud-homework-151344639.appspot.com/"+fileName+".raw";
 
 		    // Configure request with local raw PCM audio
 		    RecognitionConfig config = RecognitionConfig.newBuilder()
