@@ -18,7 +18,7 @@ public class DatastoreDao {
 	private Datastore datastore;
 	private KeyFactory keyFactory;
 
-	private final String kind = "Transactions";
+	private final String kind = "Transaction";
 
 	public DatastoreDao() {
 		datastore = DatastoreOptions.getDefaultInstance().getService(); // Authorized Datastore service
@@ -50,7 +50,8 @@ public class DatastoreDao {
 
 	public List<Transaction> getAllTransactions() {
 		Query<Entity> query = Query.newEntityQueryBuilder() // Build the Query
-				.setKind(kind).build();
+				.setKind(kind)
+				.build();
 				
 		QueryResults<Entity> resultList = datastore.run(query); // Run the query
 
